@@ -1,0 +1,10 @@
+{
+    "name": "pack-resource",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {},
+    "dependencies": {
+        "fs-extra": "^11.1.1"
+    }
+}
