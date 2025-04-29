@@ -181,8 +181,8 @@
     ],
     "value": {
       "__type__": "cc.Vec3",
-      "x": 26,
-      "y": 38.683,
+      "x": 20.72800000000001,
+      "y": 50,
       "z": 0
     }
   },
@@ -227,8 +227,8 @@
     ],
     "value": {
       "__type__": "cc.Vec3",
-      "x": 0.32,
-      "y": 0.32,
+      "x": 0.26,
+      "y": 0.28,
       "z": 1
     }
   },
@@ -410,8 +410,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 26,
-      "y": 82.049,
+      "x": 21.033999999999992,
+      "y": 7,
       "z": 0
     },
     "_lrot": {
@@ -451,7 +451,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 28.6,
+      "width": 27.3,
       "height": 22
     },
     "_anchorPoint": {
@@ -490,8 +490,8 @@
     "_string": "2x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 22,
-    "_fontSize": 22,
+    "_actualFontSize": 21,
+    "_fontSize": 21,
     "_fontFamily": "Arial",
     "_lineHeight": 22,
     "_overflow": 0,
@@ -507,6 +507,29 @@
     "_isUnderline": false,
     "_underlineHeight": 2,
     "_cacheMode": 0,
+    "_enableOutline": false,
+    "_outlineColor": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "_outlineWidth": 2,
+    "_enableShadow": false,
+    "_shadowColor": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "_shadowOffset": {
+      "__type__": "cc.Vec2",
+      "x": 2,
+      "y": 2
+    },
+    "_shadowBlur": 2,
     "_id": ""
   },
   {
@@ -636,7 +659,6 @@
     "_timeScale": 1,
     "_preCacheMode": 0,
     "_cacheMode": 0,
-    "_defaultCacheMode": 0,
     "_sockets": [],
     "_useTint": false,
     "_debugMesh": false,
@@ -677,8 +699,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 52,
-      "height": 100
+      "width": 42,
+      "height": 90
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
