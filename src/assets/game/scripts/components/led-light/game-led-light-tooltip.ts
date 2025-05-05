@@ -1,6 +1,5 @@
 import gc from "@sg/game-client-base";
 import { _decorator, Label } from "cc";
-import { GameBaccaratResultUtil } from "db://baccarat-shared-components/utils/game-result-util";
 import { LedLightTooltipAlignment } from "db://shared-components/game/led-light/scripts/components/led-light-tooltip-alignment";
 
 const { ccclass, property } = _decorator;
@@ -23,9 +22,11 @@ export class GameLedLightToolTip extends LedLightTooltipAlignment {
         if (typeof result !== "object") {
             return;
         }
+        const { banker, player } = result;
+        console.log("player", player?.score);
+        console.log("player", banker?.score);
 
-        const { playerScore, bankerScore } = GameBaccaratResultUtil.getScores(result);
-        this.lblPlayerTotalPoint.string = `${playerScore}`;
-        this.lblBankerTotalPoint.string = `${bankerScore}`;
+        this.lblPlayerTotalPoint.string = `${player?.score}`;
+        this.lblBankerTotalPoint.string = `${banker?.score}`;
     }
 }

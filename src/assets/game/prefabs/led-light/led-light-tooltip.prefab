@@ -218,7 +218,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -134.09326171875,
+      "x": -46.535888671875,
       "y": -4.266,
       "z": 0
     },
@@ -259,7 +259,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 471.064453125,
+      "width": 120.8349609375,
       "height": 60.480000000000004
     },
     "_anchorPoint": {
@@ -295,7 +295,7 @@
       "b": 196,
       "a": 255
     },
-    "_string": "BACCARAT.GLOSSARY_PLAYER",
+    "_string": "PLAYER",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 30,
@@ -356,7 +356,7 @@
     "__prefab": {
       "__id__": 10
     },
-    "key": "Baccarat.glossary_player",
+    "key": "BaccaratX.glossary_player",
     "format": 1,
     "prefix": "",
     "suffix": "",
@@ -590,7 +590,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 119.76611328125,
+      "x": 32.208740234375,
       "y": -4.266,
       "z": 0
     },
@@ -631,7 +631,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 478.828125,
+      "width": 128.5986328125,
       "height": 60.480000000000004
     },
     "_anchorPoint": {
@@ -667,7 +667,7 @@
       "b": 49,
       "a": 255
     },
-    "_string": "BACCARAT.GLOSSARY_BANKER",
+    "_string": "BANKER",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 30,
@@ -728,7 +728,7 @@
     "__prefab": {
       "__id__": 26
     },
-    "key": "Baccarat.glossary_banker",
+    "key": "BaccaratX.glossary_banker",
     "format": 1,
     "prefix": "",
     "suffix": "",
@@ -794,7 +794,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 247.666259765625,
+      "x": 72.551513671875,
       "y": -4.266,
       "z": 0
     },
@@ -947,7 +947,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 527.71875,
+      "width": 177.4892578125,
       "height": 46.333
     },
     "_anchorPoint": {
@@ -975,8 +975,8 @@
     },
     "_alignFlags": 45,
     "_target": null,
-    "_left": -156.693875,
-    "_right": -156.693875,
+    "_left": 18.42087109375001,
+    "_right": 18.42087109375001,
     "_top": 3.9659999999999997,
     "_bottom": -3.9659999999999997,
     "_horizontalCenter": 0,
