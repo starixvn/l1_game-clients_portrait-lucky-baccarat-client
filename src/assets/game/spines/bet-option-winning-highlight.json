@@ -1,10 +1,10 @@
 {
-"skeleton": { "hash": "eZsq9m7MDE7C4D+ja44V45iY34s", "spine": "3.8.99" },
+"skeleton": { "hash": "GPEG5AulLIJ/uSbYX/27G7u+m3g", "spine": "3.8.99" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "main-bet-option-highlight", "parent": "root" },
 	{ "name": "main-bet-option-tie-highlight", "parent": "root" },
-	{ "name": "sub-bet-option-highlight", "parent": "root", "rotation": -0.08 }
+	{ "name": "sub-bet-option-highlight", "parent": "root" }
 ],
 "slots": [
 	{ "name": "main-bet-option-highlight", "bone": "main-bet-option-highlight" },
@@ -16,13 +16,13 @@
 		"name": "default",
 		"attachments": {
 			"main-bet-option-highlight": {
-				"main-bet-option-highlight": { "width": 268, "height": 216 }
+				"main-bet-option-highlight": { "width": 303, "height": 167 }
 			},
 			"main-bet-option-tie-highlight": {
-				"main-bet-option-tie-highlight": { "width": 220, "height": 216 }
+				"main-bet-option-tie-highlight": { "width": 219, "height": 167 }
 			},
 			"sub-bet-option-highlight": {
-				"sub-bet-option-highlight": { "width": 190, "height": 166 }
+				"sub-bet-option-highlight": { "width": 207, "height": 144 }
 			}
 		}
 	}
