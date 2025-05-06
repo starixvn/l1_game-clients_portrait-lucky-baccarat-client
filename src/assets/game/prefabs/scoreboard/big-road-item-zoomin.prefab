@@ -2984,7 +2984,7 @@
       "__id__": 163
     },
     "image": {
-      "__uuid__": "5c300486-786c-4ec0-a8ed-047f364b44a9@40b91",
+      "__uuid__": "c7417edb-d470-4c87-8086-17d312063e0d@40b91",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
@@ -2999,7 +2999,7 @@
       "__id__": 165
     },
     "image": {
-      "__uuid__": "5c300486-786c-4ec0-a8ed-047f364b44a9@d2538",
+      "__uuid__": "c7417edb-d470-4c87-8086-17d312063e0d@d2538",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
@@ -3059,7 +3059,7 @@
       "__id__": 173
     },
     "image": {
-      "__uuid__": "5c300486-786c-4ec0-a8ed-047f364b44a9@63867",
+      "__uuid__": "c7417edb-d470-4c87-8086-17d312063e0d@63867",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
