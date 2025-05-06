@@ -23,8 +23,6 @@ export class GameLedLightToolTip extends LedLightTooltipAlignment {
             return;
         }
         const { banker, player } = result;
-        console.log("player", player?.score);
-        console.log("player", banker?.score);
 
         this.lblPlayerTotalPoint.string = `${player?.score}`;
         this.lblBankerTotalPoint.string = `${banker?.score}`;

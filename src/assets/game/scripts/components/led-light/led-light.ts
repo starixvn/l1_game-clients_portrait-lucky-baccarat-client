@@ -75,7 +75,6 @@ export class LedLight extends ObserverComponent {
 
     protected readonly ledLightItemListener = {
         onEnter: (node: Node) => {
-            console.log("onEnter", node);
             this.selectedLedLight = node;
             const ledLightInfo = node.getComponent(GameLedLightItem).ledLightItemInfo;
             if (this.toolTipCompt && ledLightInfo) {

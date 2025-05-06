@@ -2900,9 +2900,9 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 7,
-      "g": 60,
-      "b": 196,
+      "r": 39,
+      "g": 55,
+      "b": 191,
       "a": 255
     },
     "_spriteFrame": {
@@ -3036,9 +3036,9 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 38,
-      "b": 49,
+      "r": 253,
+      "g": 57,
+      "b": 57,
       "a": 255
     },
     "_spriteFrame": {
@@ -3724,7 +3724,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "BACCARAT.SHORT_PLAYER",
+    "_string": "DATA NULL: ",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 22,
@@ -3778,11 +3778,11 @@
     "node": {
       "__id__": 155
     },
-    "_enabled": true,
+    "_enabled": false,
     "__prefab": {
       "__id__": 161
     },
-    "key": "Baccarat.short_player",
+    "key": "",
     "format": 1,
     "prefix": "",
     "suffix": "",
@@ -3874,7 +3874,7 @@
       "__id__": 163
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 165
@@ -4010,7 +4010,7 @@
       "__id__": 163
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 171
@@ -4146,7 +4146,7 @@
       "__id__": 163
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 177
@@ -4664,7 +4664,7 @@
     "node": {
       "__id__": 196
     },
-    "_enabled": true,
+    "_enabled": false,
     "__prefab": {
       "__id__": 202
     },
@@ -15844,7 +15844,9 @@
         "__id__": 722
       }
     ],
-    "prediction": null,
+    "prediction": {
+      "__id__": 240
+    },
     "_id": ""
   },
   {
@@ -20951,7 +20953,9 @@
     "expandedBeadRoad": {
       "__id__": 896
     },
-    "collapsedBeadRoad": null,
+    "collapsedBeadRoad": {
+      "__id__": 979
+    },
     "_id": ""
   },
   {
