@@ -18455,7 +18455,7 @@
     "propertyPath": [
       "key"
     ],
-    "value": "Baccarat.short_player"
+    "value": "BaccaratX.short_player"
   },
   {
     "__type__": "cc.TargetInfo",
@@ -18471,7 +18471,7 @@
     "propertyPath": [
       "_active"
     ],
-    "value": false
+    "value": true
   },
   {
     "__type__": "cc.TargetInfo",
@@ -18487,7 +18487,7 @@
     "propertyPath": [
       "_active"
     ],
-    "value": false
+    "value": true
   },
   {
     "__type__": "cc.TargetInfo",
@@ -18503,7 +18503,7 @@
     "propertyPath": [
       "_active"
     ],
-    "value": false
+    "value": true
   },
   {
     "__type__": "cc.TargetInfo",

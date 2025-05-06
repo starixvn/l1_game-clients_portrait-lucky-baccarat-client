@@ -3724,7 +3724,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "DATA NULL: ",
+    "_string": "P",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 22,
@@ -3778,11 +3778,11 @@
     "node": {
       "__id__": 155
     },
-    "_enabled": false,
+    "_enabled": true,
     "__prefab": {
       "__id__": 161
     },
-    "key": "",
+    "key": "BaccaratX.short_player",
     "format": 1,
     "prefix": "",
     "suffix": "",
@@ -4610,7 +4610,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "BACCARAT.SHORT_BANKER",
+    "_string": "B",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 22,
@@ -4664,11 +4664,11 @@
     "node": {
       "__id__": 196
     },
-    "_enabled": false,
+    "_enabled": true,
     "__prefab": {
       "__id__": 202
     },
-    "key": "Baccarat.short_banker",
+    "key": "BaccaratX.short_banker",
     "format": 1,
     "prefix": "",
     "suffix": "",
