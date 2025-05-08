@@ -49,6 +49,21 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
+            <key>icon-pf-small.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{38,38}</string>
+                <key>spriteSourceSize</key>
+                <string>{38,38}</string>
+                <key>textureRect</key>
+                <string>{{145,83},{38,38}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
             <key>led-bg.png</key>
             <dict>
                 <key>aliases</key>
@@ -61,6 +76,36 @@
                 <string>{52,34}</string>
                 <key>textureRect</key>
                 <string>{{91,83},{52,34}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>led-stats-B.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{30,30}</string>
+                <key>spriteSourceSize</key>
+                <string>{30,30}</string>
+                <key>textureRect</key>
+                <string>{{91,119},{30,30}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>led-stats-P.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{30,30}</string>
+                <key>spriteSourceSize</key>
+                <string>{30,30}</string>
+                <key>textureRect</key>
+                <string>{{123,123},{30,30}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -108,7 +153,7 @@
             <key>size</key>
             <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:fabf7e5af3f4e607ffa047d64b175617:50fef20cb0642bb5a4f07afe4824751a:e636e8631f1c301f4702d08ab25a8b59$</string>
+            <string>$TexturePacker:SmartUpdate:98fa1da233542ba76a9bddabbafc4e53:38bd882642dcc51b0e69cc8e2478e733:e636e8631f1c301f4702d08ab25a8b59$</string>
             <key>textureFileName</key>
             <string>game-atlas.png</string>
         </dict>
