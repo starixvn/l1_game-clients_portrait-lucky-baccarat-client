@@ -1229,7 +1229,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -405.797,
-      "y": 154.56600000000003,
+      "y": 178.32500000000005,
       "z": 0
     },
     "_lrot": {
@@ -2207,7 +2207,7 @@
     "propertyPath": [
       "_active"
     ],
-    "value": true
+    "value": false
   },
   {
     "__type__": "cc.TargetInfo",
@@ -2775,7 +2775,7 @@
         "__id__": 107
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 127
@@ -2787,8 +2787,8 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -345.56600000000003,
-      "y": 156.793,
+      "x": -366.743,
+      "y": 128.90099999999995,
       "z": 0
     },
     "_lrot": {
@@ -10629,7 +10629,7 @@
       "a": 255
     },
     "_skeletonData": {
-      "__uuid__": "e1235daa-b903-43ac-b5eb-4d753825a590",
+      "__uuid__": "21c1e099-84bd-47f9-a148-a88a5af0c5ec",
       "__expectedType__": "sp.SkeletonData"
     },
     "defaultSkin": "default",
@@ -12413,7 +12413,7 @@
       "a": 255
     },
     "_skeletonData": {
-      "__uuid__": "e1235daa-b903-43ac-b5eb-4d753825a590",
+      "__uuid__": "21c1e099-84bd-47f9-a148-a88a5af0c5ec",
       "__expectedType__": "sp.SkeletonData"
     },
     "defaultSkin": "default",
@@ -14194,7 +14194,7 @@
       "a": 255
     },
     "_skeletonData": {
-      "__uuid__": "e1235daa-b903-43ac-b5eb-4d753825a590",
+      "__uuid__": "21c1e099-84bd-47f9-a148-a88a5af0c5ec",
       "__expectedType__": "sp.SkeletonData"
     },
     "defaultSkin": "default",
@@ -15710,7 +15710,7 @@
       "a": 255
     },
     "_skeletonData": {
-      "__uuid__": "e1235daa-b903-43ac-b5eb-4d753825a590",
+      "__uuid__": "21c1e099-84bd-47f9-a148-a88a5af0c5ec",
       "__expectedType__": "sp.SkeletonData"
     },
     "defaultSkin": "default",
@@ -17186,12 +17186,12 @@
       "a": 255
     },
     "_skeletonData": {
-      "__uuid__": "e1235daa-b903-43ac-b5eb-4d753825a590",
+      "__uuid__": "21c1e099-84bd-47f9-a148-a88a5af0c5ec",
       "__expectedType__": "sp.SkeletonData"
     },
     "defaultSkin": "default",
     "defaultAnimation": "main",
-    "_premultipliedAlpha": true,
+    "_premultipliedAlpha": false,
     "_timeScale": 1,
     "_preCacheMode": 0,
     "_cacheMode": 0,

@@ -1,27 +1,27 @@
 
-bet-option-winning-highlight.webp
-size: 737,171
+bet-option-winning-highlight.png
+size: 933,167
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 main-bet-option-highlight
   rotate: false
-  xy: 2, 2
-  size: 303, 167
-  orig: 303, 167
+  xy: 410, 2
+  size: 301, 163
+  orig: 301, 163
   offset: 0, 0
   index: -1
 main-bet-option-tie-highlight
   rotate: false
-  xy: 307, 2
-  size: 219, 167
-  orig: 219, 167
+  xy: 713, 2
+  size: 218, 163
+  orig: 218, 163
   offset: 0, 0
   index: -1
 sub-bet-option-highlight
   rotate: false
-  xy: 528, 25
-  size: 207, 144
-  orig: 207, 144
+  xy: 2, 23
+  size: 406, 142
+  orig: 406, 142
   offset: 0, 0
   index: -1
