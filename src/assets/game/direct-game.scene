@@ -13801,7 +13801,7 @@
     ],
     "value": {
       "__type__": "cc.Vec3",
-      "x": 414,
+      "x": 397,
       "y": 0,
       "z": 0
     }
@@ -14433,7 +14433,7 @@
     ],
     "value": {
       "__type__": "cc.Vec3",
-      "x": 413.99999999999994,
+      "x": 414,
       "y": 0,
       "z": 0
     }
@@ -15436,7 +15436,7 @@
     "__type__": "PrefabItem",
     "name": "CutCardIndex",
     "prefab": {
-      "__uuid__": "1e71cff1-de0f-4600-918b-44da6e1795c4",
+      "__uuid__": "8ce8b27d-a2a6-4d09-8761-cf1fce2067f8",
       "__expectedType__": "cc.Prefab"
     }
   },
