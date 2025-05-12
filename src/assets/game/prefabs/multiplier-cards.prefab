@@ -1431,7 +1431,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 345,
+      "width": 347,
       "height": 105
     },
     "_anchorPoint": {
@@ -1466,7 +1466,7 @@
     },
     "_startAxis": 0,
     "_paddingLeft": 5,
-    "_paddingRight": 5,
+    "_paddingRight": 7,
     "_paddingTop": 0,
     "_paddingBottom": 0,
     "_spacingX": 1,
