@@ -7046,7 +7046,7 @@
       "__id__": 326
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 328
@@ -7146,7 +7146,7 @@
     "_string": "",
     "_horizontalAlign": 0,
     "_verticalAlign": 1,
-    "_actualFontSize": 18,
+    "_actualFontSize": 20,
     "_fontSize": 18,
     "_fontFamily": "Arial",
     "_lineHeight": 30,
@@ -7256,8 +7256,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 546,
-      "height": 61.8
+      "width": 580,
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -13418,6 +13418,8 @@
       "__id__": 0
     },
     "fileId": "80qUGf2PVJ95VB8aAoxAFT",
+    "instance": null,
+    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {

@@ -1,5 +1,5 @@
 import gc from "@sg/game-client-base";
-import { Color, Label, Node, Prefab, Toggle, _decorator, instantiate } from "cc";
+import { Color, EditBox, Label, Node, Prefab, Toggle, _decorator, instantiate } from "cc";
 import { ClientSeedManualBaccaratPopup } from "db://shared-components/game-baccarat/fairness/scripts/client-seed-manual-baccarat-popup";
 import { getTimePointCutCards } from "db://shared-components/game-baccarat/time-point";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
@@ -10,8 +10,8 @@ const { render, handle, observer } = Observer;
 
 @ccclass
 export class FairnessSettingsBaccaratPopup extends ObserverComponent {
-    @property(Label)
-    lblClientSeed: Label = null;
+    @property(EditBox)
+    inputClientSeed: EditBox = null;
 
     @property(Label)
     lblSHA256: Label = null;
@@ -53,7 +53,6 @@ export class FairnessSettingsBaccaratPopup extends ObserverComponent {
         this.updateMinCS();
         this.lblRangeClientSeed.string = `(${this.minCSNumber} - ${this.maxCSNumber})`;
         this.generateRandomCS();
-        this.lblClientSeed.node?.on(Node.EventType.TOUCH_START, this.showPopupManual, this);
     }
 
     @render(gc.GameConfigs.GameSetting, (gameSetting) => gameSetting.durations)
@@ -78,7 +77,7 @@ export class FairnessSettingsBaccaratPopup extends ObserverComponent {
         comp.maxClientSeed = this.maxCSNumber;
         comp.renderRangeCS();
         this.nodeManualSettings.addChild(manual);
-        comp.setClientSeedValue(this.lblClientSeed.string);
+        comp.setClientSeedValue(this.inputClientSeed.string);
     }
 
     @render(GameBaccaratX.CutCardPF.FairnessStore, (store) => store.cutCardInfo)
@@ -103,12 +102,12 @@ export class FairnessSettingsBaccaratPopup extends ObserverComponent {
     @handle(GameBaccaratX.CutCardPF.FairnessHandler, (handler, clientSeed: string) => handler.sendClientSeed(clientSeed))
     onClickSubmit() {
         this.playSoundClick();
-        return this.lblClientSeed.string;
+        return this.inputClientSeed.string;
     }
 
     @render(GameBaccaratX.CutCardPF.FairnessStore, (store) => store.clientSeed)
     renderClientSeed(clientSeed: string) {
-        this.lblClientSeed.string = clientSeed;
+        this.inputClientSeed.string = clientSeed;
     }
 
     @render(GameBaccaratX.Shoe.ShoeStore, (store) => store.shoeHash)
@@ -153,20 +152,20 @@ export class FairnessSettingsBaccaratPopup extends ObserverComponent {
 
     onClickPrevious() {
         this.playSoundClick();
-        let clientSeedTpm = +this.lblClientSeed.string - 1;
+        let clientSeedTpm = +this.inputClientSeed.string - 1;
         if (clientSeedTpm < this.minCSNumber) {
             clientSeedTpm = this.maxCSNumber;
         }
-        this.lblClientSeed.string = clientSeedTpm.toString();
+        this.inputClientSeed.string = clientSeedTpm.toString();
     }
 
     onClickNext() {
         this.playSoundClick();
-        let clientSeedTpm = +this.lblClientSeed.string + 1;
+        let clientSeedTpm = +this.inputClientSeed.string + 1;
         if (clientSeedTpm > this.maxCSNumber) {
             clientSeedTpm = this.minCSNumber;
         }
-        this.lblClientSeed.string = clientSeedTpm.toString();
+        this.inputClientSeed.string = clientSeedTpm.toString();
     }
 
     @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX(id))
