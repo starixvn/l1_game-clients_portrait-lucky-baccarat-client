@@ -4462,7 +4462,7 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_alignFlags": 2,
+    "_alignFlags": 4,
     "_target": null,
     "_left": 0,
     "_right": 0,
