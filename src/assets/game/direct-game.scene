@@ -4495,8 +4495,8 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "value": 0.1,
-    "_id": "12hTPQzEtAQaQz8RydeTBm"
+    "value": -0.1,
+    "_id": "71qMctPVJO8oppdpMa2RcM"
   },
   {
     "__type__": "cc.Node",
