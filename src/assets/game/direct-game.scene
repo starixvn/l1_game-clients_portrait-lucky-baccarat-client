@@ -4478,7 +4478,7 @@
     "_isAbsTop": true,
     "_isAbsBottom": true,
     "_isAbsHorizontalCenter": true,
-    "_isAbsVerticalCenter": true,
+    "_isAbsVerticalCenter": false,
     "_originalWidth": 0,
     "_originalHeight": 0,
     "_alignMode": 2,
