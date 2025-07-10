@@ -25,7 +25,6 @@ const defaultConfig: gc.Configs.SiteConfigs = {
         proxyPath: GAME_NAME.toLowerCase(),
         route: GAME_SERVICE_ROUTE,
     },
-    mainObserverNamespace: GAME_NAME,
     tolgeeUrl: "",
     storagePrefixKey: GAME_NAME,
     gatewaySubDomain: "l2-gw",
