@@ -1,58 +1,23 @@
-import gc from "@sg/game-client-base";
-import { _decorator, Button, instantiate, Label, Node, Prefab } from "cc";
-import { BetHistoryNewBodyItem } from "db://shared-components/game/bet-history-new/scripts/bet-history-new-body-item";
+import { _decorator, Node, UIOpacity } from "cc";
 import { BetHistoryBodyItemType } from "db://shared-components/game/bet-history/scripts/components/bet-history-body-item";
 
-import GameBetHistoryBetOption from "./game-bet-history-bet-option";
+import { BaccaratXBetHistorybodyItem } from "db://shared-components/game-baccarat/history/scripts/baccarat-x-bet-history-body-item";
 
 const { ccclass, property } = _decorator;
-
-type SeDieBetHistoryBodyItemType = BetHistoryBodyItemType & {
-    betsPrefab: Prefab | null;
-};
-
-const { DateTimeUtils, FormatUtils } = gc;
-
 @ccclass
-export class GameBetHistoryBodyItem extends BetHistoryNewBodyItem {
-    @property({ type: Label, override: true, visible: false })
-    lblTime: Label = null;
+export class GameBetHistoryBodyItem extends BaccaratXBetHistorybodyItem {
+    
+    
+    @property({ type: Node, override: true, visible: false })
+    result: Node = null;
 
-    @property({ type: Label, override: true, visible: false })
-    lblTotalStake: Label = null;
+    @property({ type: Node })
+    iconVerify: Node = null;
 
-    @property({ type: Button, override: true, visible: false })
-    btnRound: Button = null;
-
-    @property(Node)
-    betOption: Node = null;
-
-    @property(Prefab)
-    betsPrefab: Prefab = null;
-
-    setData(data: SeDieBetHistoryBodyItemType) {
+    setData(data: BetHistoryBodyItemType) {
         super.setData(data);
-        const { time, settlementResult, freeBet, odds } = data.betHistoryLog;
-        if (time) {
-            const date = DateTimeUtils.getStringDate(time);
-            const hour = DateTimeUtils.getStringHourByTime(time);
-            this.lblDate && (this.lblDate.string = date);
-            this.lblHour && (this.lblHour.string = hour);
-        }
+        const { verifiable } = data.betHistoryLog;
 
-        if (settlementResult) {
-            Object.keys(settlementResult).forEach((choice) => {
-                const node = instantiate(this.betsPrefab);
-                const option = node.getComponent(GameBetHistoryBetOption);
-                let stake = data.betHistoryLog[choice];
-                if (+stake > 0) {
-                    stake = freeBet ? 0 : stake;
-                    const odd = this.getFormatOdd(odds[choice]?.toString(), data?.fractionalOddsFormat);
-                    option.handleBetOptionItem(choice, odd, FormatUtils.numberWithCommas(stake));
-                    option.highlightForWinning(settlementResult[choice]);
-                    this.betOption.addChild(node);
-                }
-            });
-        }
+        this.iconVerify.getComponent(UIOpacity).opacity = verifiable ? 225 : 125;
     }
 }
