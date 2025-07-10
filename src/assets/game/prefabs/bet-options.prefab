@@ -802,9 +802,9 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 114,
-      "g": 120,
-      "b": 252,
+      "r": 221,
+      "g": 34,
+      "b": 12,
       "a": 255
     },
     "_spriteFrame": {
@@ -1696,6 +1696,8 @@
       "__id__": 0
     },
     "fileId": "7br2bZmi5FsISj+NhEV//E",
+    "instance": null,
+    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -1780,6 +1782,8 @@
       "__id__": 0
     },
     "fileId": "f35RvJhL1JKq9NmIT27dsI",
+    "instance": null,
+    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -1961,6 +1965,8 @@
       "__id__": 0
     },
     "fileId": "01BUPskJFMyYYyLOon3v3v",
+    "instance": null,
+    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -2457,6 +2463,8 @@
       "__id__": 0
     },
     "fileId": "34JRawMdlD3KZq6BoTmPZ8",
+    "instance": null,
+    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -3041,9 +3049,9 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 114,
-      "g": 120,
-      "b": 252,
+      "r": 221,
+      "g": 34,
+      "b": 12,
       "a": 255
     },
     "_spriteFrame": {
@@ -5159,9 +5167,9 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 114,
-      "g": 120,
-      "b": 252,
+      "r": 221,
+      "g": 34,
+      "b": 12,
       "a": 255
     },
     "_spriteFrame": {
@@ -7274,9 +7282,9 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 114,
-      "g": 120,
-      "b": 252,
+      "r": 221,
+      "g": 34,
+      "b": 12,
       "a": 255
     },
     "_spriteFrame": {
@@ -9135,9 +9143,9 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 114,
-      "g": 120,
-      "b": 252,
+      "r": 221,
+      "g": 34,
+      "b": 12,
       "a": 255
     },
     "_spriteFrame": {
@@ -9210,8 +9218,6 @@
       "__id__": 0
     },
     "fileId": "73XTXPEuVNpaJzuenN1qgN",
-    "instance": null,
-    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
