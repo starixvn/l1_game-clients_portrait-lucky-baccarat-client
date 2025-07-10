@@ -19,7 +19,9 @@ export class GameHistoryResultBodyItem extends BaseResultBodyItem {
     }
 
     private setCardsData(data: any, cardNode: Node) {
-        if (!data) return;
+        if (!data){
+            return;
+        } 
 
         const cards = cardNode.getComponentsInChildren(FairnessCard3D);
         const cardKeys = ["card1", "card2", "card3"];
