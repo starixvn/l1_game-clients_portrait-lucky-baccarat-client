@@ -143,6 +143,14 @@ export class LedLight extends ObserverComponent {
 
     protected updateLedLightItemInfo(rounds: gc.RoundHistories.RoundHistory[], stepStart: number) {
         if (this.rounds.length === 0 || this.ledLightItems.length === 0) {
+            if (this.isShowDotNext) {
+                this.updateFirstLedLightItem();
+                this.updateNextNode();
+                return;
+            }
+            if (this.ledLightItems.length > 0) {
+                this.hideAllDots(0);
+            }
             return;
         }
 
@@ -176,6 +184,7 @@ export class LedLight extends ObserverComponent {
         if (firstLedLightItem) {
             firstLedLightItem.getComponent(UIOpacity).opacity = this.isShowDotNext ? 1 : 255;
             firstLedLightItem.highlight.active = !this.isShowDotNext;
+            firstLedLightItem.setStatusNode(true);
         }
     }
 
