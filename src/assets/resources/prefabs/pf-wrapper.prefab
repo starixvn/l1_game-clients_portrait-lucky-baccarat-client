@@ -28,20 +28,20 @@
     "_active": true,
     "_components": [
       {
+        "__id__": 23
+      },
+      {
         "__id__": 25
       },
       {
-        "__id__": 27
+        "__id__": 30
       },
       {
-        "__id__": 29
-      },
-      {
-        "__id__": 31
+        "__id__": 32
       }
     ],
     "_prefab": {
-      "__id__": 36
+      "__id__": 34
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -412,13 +412,10 @@
       },
       {
         "__id__": 20
-      },
-      {
-        "__id__": 22
       }
     ],
     "_prefab": {
-      "__id__": 24
+      "__id__": 22
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -478,25 +475,6 @@
     "fileId": "e8OBZDboRObpHO+8nJVmPq"
   },
   {
-    "__type__": "5f091StlyZCR7fwiAyuiu3Y",
-    "_name": "",
-    "_objFlags": 0,
-    "__editorExtras__": {},
-    "node": {
-      "__id__": 17
-    },
-    "_enabled": true,
-    "__prefab": {
-      "__id__": 21
-    },
-    "_policy": 2,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.CompPrefabInfo",
-    "fileId": "4dHV0gWmxA/pwklT5qaoh6"
-  },
-  {
     "__type__": "cc.Widget",
     "_name": "",
     "_objFlags": 0,
@@ -506,7 +484,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 23
+      "__id__": 21
     },
     "_alignFlags": 45,
     "_target": null,
@@ -555,7 +533,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 26
+      "__id__": 24
     },
     "_contentSize": {
       "__type__": "cc.Size",
@@ -574,6 +552,62 @@
     "fileId": "53raco6cZBFIrtvqFs+6kN"
   },
   {
+    "__type__": "940e6NBnRNOva/jPLEDu1CT",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 26
+    },
+    "container": {
+      "__id__": 17
+    },
+    "prefabItems": [
+      {
+        "__id__": 27
+      },
+      {
+        "__id__": 28
+      },
+      {
+        "__id__": 29
+      }
+    ],
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "0aR4XIp1pKDJGSVW30v4Vf"
+  },
+  {
+    "__type__": "PrefabItem",
+    "name": "ClientSeedSetting",
+    "prefab": {
+      "__uuid__": "ed4fa666-570d-4009-9fdc-1e4ceabbcb7e",
+      "__expectedType__": "cc.Prefab"
+    }
+  },
+  {
+    "__type__": "PrefabItem",
+    "name": "FairnessVerification",
+    "prefab": {
+      "__uuid__": "d1f0a3c3-afa5-46e1-bc38-4218a61fb494",
+      "__expectedType__": "cc.Prefab"
+    }
+  },
+  {
+    "__type__": "PrefabItem",
+    "name": "CutCardIndex",
+    "prefab": {
+      "__uuid__": "8ce8b27d-a2a6-4d09-8761-cf1fce2067f8",
+      "__expectedType__": "cc.Prefab"
+    }
+  },
+  {
     "__type__": "cc.Widget",
     "_name": "",
     "_objFlags": 0,
@@ -583,7 +617,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 28
+      "__id__": 31
     },
     "_alignFlags": 45,
     "_target": null,
@@ -619,7 +653,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 30
+      "__id__": 33
     },
     "nodeFadeBackground": {
       "__id__": 2
@@ -632,62 +666,6 @@
   {
     "__type__": "cc.CompPrefabInfo",
     "fileId": "bcVEapZVJE3aYHDp3igmgD"
-  },
-  {
-    "__type__": "940e6NBnRNOva/jPLEDu1CT",
-    "_name": "",
-    "_objFlags": 0,
-    "__editorExtras__": {},
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "__prefab": {
-      "__id__": 32
-    },
-    "container": {
-      "__id__": 17
-    },
-    "prefabItems": [
-      {
-        "__id__": 33
-      },
-      {
-        "__id__": 34
-      },
-      {
-        "__id__": 35
-      }
-    ],
-    "_id": ""
-  },
-  {
-    "__type__": "cc.CompPrefabInfo",
-    "fileId": "0aR4XIp1pKDJGSVW30v4Vf"
-  },
-  {
-    "__type__": "PrefabItem",
-    "name": "ClientSeedSetting",
-    "prefab": {
-      "__uuid__": "ed4fa666-570d-4009-9fdc-1e4ceabbcb7e",
-      "__expectedType__": "cc.Prefab"
-    }
-  },
-  {
-    "__type__": "PrefabItem",
-    "name": "FairnessVerification",
-    "prefab": {
-      "__uuid__": "d1f0a3c3-afa5-46e1-bc38-4218a61fb494",
-      "__expectedType__": "cc.Prefab"
-    }
-  },
-  {
-    "__type__": "PrefabItem",
-    "name": "CutCardIndex",
-    "prefab": {
-      "__uuid__": "8ce8b27d-a2a6-4d09-8761-cf1fce2067f8",
-      "__expectedType__": "cc.Prefab"
-    }
   },
   {
     "__type__": "cc.PrefabInfo",
