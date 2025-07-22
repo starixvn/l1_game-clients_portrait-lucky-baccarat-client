@@ -30,11 +30,15 @@ export class BaccaratScoreBoard extends Component {
     @property(Scoreboard)
     collapsedBeadRoad: Scoreboard = null;
 
+    @property(Scoreboard)
+    collapsedDerivedRoad: Scoreboard = null;
+
     private isExpandBeadRoad = false;
     private readonly zoomModes = {
         normal: "normal",
         zoomInBigRoad: "zoomInBigRoad",
         zoomInDerivedRoad: "zoomInDerivedRoad",
+        collapsedDerivedRoad: "collapsedDerivedRoad",
     };
 
     private readonly WIDTH_EXPAND_BEADROAD = 561;
@@ -46,7 +50,21 @@ export class BaccaratScoreBoard extends Component {
         this.zoom(undefined, this.zoomModes.normal);
     }
 
+    getCurrentZoomMode(): string {
+        if (this.nodeWrapperVertical.getChildByName(this.zoomModes.normal).active) {
+            return this.zoomModes.normal;
+        } else if (this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInBigRoad).active) {
+            return this.zoomModes.zoomInBigRoad;
+        } else if (this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInDerivedRoad).active) {
+            return this.zoomModes.zoomInDerivedRoad;
+        } else if (this.nodeWrapperVertical.getChildByName(this.zoomModes.collapsedDerivedRoad).active) {
+            return this.zoomModes.collapsedDerivedRoad;
+        }
+        return this.zoomModes.normal;
+    }
+
     onClickExpandMode() {
+        const currentZoomMode = this.getCurrentZoomMode();
         this.isExpandBeadRoad = !this.isExpandBeadRoad;
 
         const bigRoadZoomIn = this.nodeWrapperVertical.getChildByName("zoomInBigRoad");
@@ -82,6 +100,14 @@ export class BaccaratScoreBoard extends Component {
         const bigRoadZoomInLayout = bigRoadZoomIn.getComponent(GridLayout);
         bigRoadLayout.scrollToEnd();
         bigRoadZoomInLayout.scrollToEnd();
+
+        if (currentZoomMode === this.zoomModes.zoomInDerivedRoad && this.isExpandBeadRoad) {
+            this.zoom(undefined, this.zoomModes.collapsedDerivedRoad);
+        } else if (currentZoomMode === this.zoomModes.collapsedDerivedRoad && !this.isExpandBeadRoad) {
+            this.zoom(undefined, this.zoomModes.zoomInDerivedRoad);
+        } else {
+            this.zoom(undefined, currentZoomMode);
+        }
     }
 
     zoom(event: any, mode: string) {
@@ -90,25 +116,38 @@ export class BaccaratScoreBoard extends Component {
                 this.nodeWrapperVertical.getChildByName(this.zoomModes.normal).active = true;
                 this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInBigRoad).active = false;
                 this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInDerivedRoad).active = false;
+                this.nodeWrapperVertical.getChildByName(this.zoomModes.collapsedDerivedRoad).active = false;
                 break;
 
             case this.zoomModes.zoomInBigRoad:
                 this.nodeWrapperVertical.getChildByName(this.zoomModes.normal).active = false;
                 this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInBigRoad).active = true;
                 this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInDerivedRoad).active = false;
+                this.nodeWrapperVertical.getChildByName(this.zoomModes.collapsedDerivedRoad).active = false;
                 break;
 
             case this.zoomModes.zoomInDerivedRoad:
                 this.nodeWrapperVertical.getChildByName(this.zoomModes.normal).active = false;
                 this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInBigRoad).active = false;
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInDerivedRoad).active = true;
+
+                if (this.isExpandBeadRoad) {
+                    this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInDerivedRoad).active = false;
+                    this.nodeWrapperVertical.getChildByName(this.zoomModes.collapsedDerivedRoad).active = true;
+                } else {
+                    this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInDerivedRoad).active = true;
+                    this.nodeWrapperVertical.getChildByName(this.zoomModes.collapsedDerivedRoad).active = false;
+                }
+                break;
+
+            case this.zoomModes.collapsedDerivedRoad:
+                this.nodeWrapperVertical.getChildByName(this.zoomModes.normal).active = false;
+                this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInBigRoad).active = false;
+                this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInDerivedRoad).active = false;
+                this.nodeWrapperVertical.getChildByName(this.zoomModes.collapsedDerivedRoad).active = true;
                 break;
         }
 
-        if (!this.isExpandBeadRoad) {
-            return;
-        }
-        this.onClickExpandMode();
+        
     }
 
     setWidthForNodes(nodes: Node[], width: number) {
