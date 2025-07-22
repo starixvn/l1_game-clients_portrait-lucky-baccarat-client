@@ -101,11 +101,13 @@ export class BaccaratScoreBoard extends Component {
         bigRoadLayout.scrollToEnd();
         bigRoadZoomInLayout.scrollToEnd();
 
+        // Switch between derived road modes when expanding/collapsing
         if (currentZoomMode === this.zoomModes.zoomInDerivedRoad && this.isExpandBeadRoad) {
             this.zoom(undefined, this.zoomModes.collapsedDerivedRoad);
         } else if (currentZoomMode === this.zoomModes.collapsedDerivedRoad && !this.isExpandBeadRoad) {
             this.zoom(undefined, this.zoomModes.zoomInDerivedRoad);
         } else {
+            // Maintain current zoom mode for other cases
             this.zoom(undefined, currentZoomMode);
         }
     }
