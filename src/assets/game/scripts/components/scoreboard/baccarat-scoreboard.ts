@@ -1,6 +1,17 @@
-import { _decorator, Component, Layout, Node, Sprite, SpriteAtlas, UITransform } from "cc";
+import { _decorator, Component, Layout, Node, Sprite, SpriteAtlas, UITransform, Widget } from "cc";
 import { Scoreboard } from "db://shared-components/game/scoreboards/scripts/components/scoreboard";
+import { ScoreboardDerived } from "db://shared-components/game/scoreboards/scripts/components/scoreboard-derived";
 import { GridLayout } from "db://shared-components/shared/common-components/grid-layout/scripts/components/grid-layout";
+import { GridLayoutBuilder } from "db://shared-components/shared/common-components/grid-layout/scripts/components/grid-layout-builder";
+import {
+    beadRoadConfig,
+    bigEyeBoyConfig,
+    bigRoadConfig,
+    cockroachPigConfig,
+    lineHeightConfig,
+    midLineConfig,
+    smallRoadConfig
+} from "./baccarat-scoreboard-config";
 
 const { ccclass, property } = _decorator;
 
@@ -18,9 +29,6 @@ export class BaccaratScoreBoard extends Component {
     @property(Node)
     nodeBigRoad: Node = null;
 
-    @property(Node)
-    nodeZoomInBigRoad: Node = null;
-
     @property(SpriteAtlas)
     mainAtlas: SpriteAtlas = null;
 
@@ -30,159 +38,214 @@ export class BaccaratScoreBoard extends Component {
     @property(Scoreboard)
     expandedBeadRoad: Scoreboard = null;
 
-    @property(Scoreboard)
-    collapsedBeadRoad: Scoreboard = null;
+    @property(Node)
+    nodeBigEyeBoy: Node = null;
 
-    @property(Scoreboard)
-    collapsedDerivedRoad: Scoreboard = null;
+    @property(Node)
+    nodeSmallRoad: Node = null;
+
+    @property(Node)
+    nodeCockroachPig: Node = null;
+
+    @property(Node)
+    nodeMiddleLine: Node = null;
+
+    @property(Node)
+    nodeBigEyeBoyLine: Node = null;
+
+    @property(Node)
+    nodeSmallRoadLine: Node = null;
+
+    @property(ScoreboardDerived)
+    baccaratDerivedRoad: ScoreboardDerived = null;
 
     private isExpandBeadRoad = false;
+    private isExpandBigRoad = false;
+    private isExpandDerivedRoad = false;
     private readonly zoomModes = {
-        normal: "normal",
-        zoomInBigRoad: "zoomInBigRoad",
-        zoomInDerivedRoad: "zoomInDerivedRoad",
-        collapsedDerivedRoad: "collapsedDerivedRoad",
+        bigRoad: "zoomInBigRoad",
+        derivedRoad: "zoomInDerivedRoad",
     };
 
     private readonly WIDTH_EXPAND_BEADROAD = 561;
     private readonly WIDTH_COLLAPSE_BEADROAD = 100;
     private readonly WIDTH_SPACING = 22;
     private readonly WIDTH_GAME = 828;
-
-    protected start(): void {
-        this.zoom(undefined, this.zoomModes.normal);
-    }
-
-    getCurrentZoomMode(): string {
-        if (this.nodeWrapperVertical.getChildByName(this.zoomModes.normal).active) {
-            return this.zoomModes.normal;
-        } else if (this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInBigRoad).active) {
-            return this.zoomModes.zoomInBigRoad;
-        } else if (this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInDerivedRoad).active) {
-            return this.zoomModes.zoomInDerivedRoad;
-        } else if (this.nodeWrapperVertical.getChildByName(this.zoomModes.collapsedDerivedRoad).active) {
-            return this.zoomModes.collapsedDerivedRoad;
-        }
-        return this.zoomModes.normal;
-    }
+    private readonly UN_EXPAND_WIDTH = this.WIDTH_GAME - this.WIDTH_SPACING - this.WIDTH_EXPAND_BEADROAD;
+    private readonly EXPAND_WIDTH = this.WIDTH_GAME - this.WIDTH_SPACING - this.WIDTH_COLLAPSE_BEADROAD;
 
     onClickExpandMode() {
-        const currentZoomMode = this.getCurrentZoomMode();
         this.isExpandBeadRoad = !this.isExpandBeadRoad;
 
-        const bigRoadZoomIn = this.nodeWrapperVertical.getChildByName("zoomInBigRoad");
+        this.nodeBeadRoad.getComponent(UITransform).width = this.isExpandBeadRoad
+            ? this.WIDTH_EXPAND_BEADROAD
+            : this.WIDTH_COLLAPSE_BEADROAD;
+        this.nodeWrapperVertical.getComponent(UITransform).width = this.isExpandBeadRoad ? this.UN_EXPAND_WIDTH : this.EXPAND_WIDTH;
 
-        const nodes = [
-            this.nodeWrapperVertical,
-            this.nodeBigRoad,
-            bigRoadZoomIn.children[0],
-            bigRoadZoomIn.children[1],
-            this.nodeBigRoad.children[0],
-            this.nodeBigRoad.children[1],
-        ];
-        this.nodeWrapperVertical.children.forEach((child) => {
-            nodes.push(child);
-        });
+        this.sprChangeModeBeadRoad.spriteFrame = this.mainAtlas.getSpriteFrame(
+            this.isExpandBeadRoad ? "stats-icon-zoom-out" : "stats-icon-zoom"
+        );
 
-        if (this.isExpandBeadRoad) {
-            this.nodeBeadRoad.getComponent(UITransform).width = this.WIDTH_EXPAND_BEADROAD;
-            this.setWidthForNodes(nodes, this.WIDTH_GAME - this.WIDTH_SPACING - this.WIDTH_EXPAND_BEADROAD);
-            this.sprChangeModeBeadRoad.spriteFrame = this.mainAtlas.getSpriteFrame("stats-icon-zoom-out");
-            this.expandedBeadRoad.node.active = true;
-            this.collapsedBeadRoad.node.active = false;
-        } else {
-            this.nodeBeadRoad.getComponent(UITransform).width = this.WIDTH_COLLAPSE_BEADROAD;
-            this.setWidthForNodes(nodes, this.WIDTH_GAME - this.WIDTH_SPACING - this.WIDTH_COLLAPSE_BEADROAD);
-            this.sprChangeModeBeadRoad.spriteFrame = this.mainAtlas.getSpriteFrame("stats-icon-zoom");
-            this.expandedBeadRoad.node.active = false;
-            this.collapsedBeadRoad.node.active = true;
-        }
-
-        if (currentZoomMode === this.zoomModes.normal && this.isExpandBeadRoad) {
-            //get big road layout
-            const bigRoadLayout = this.nodeBigRoad.getComponent(GridLayout);
-            bigRoadLayout.settings.column = 11;
-            //get big road scoreboard
-            const bigRoadScoreboard = this.nodeBigRoad.getComponent(Scoreboard);
-            bigRoadScoreboard.render(bigRoadScoreboard.cached);
-        } else {
-            const bigRoadLayout = this.nodeBigRoad.getComponent(GridLayout);
-            bigRoadLayout.settings.column = 32;
-            //get big road scoreboard
-            const bigRoadScoreboard = this.nodeBigRoad.getComponent(Scoreboard);
-            bigRoadScoreboard.render(bigRoadScoreboard.cached);
-        }
-
-        if (currentZoomMode === this.zoomModes.zoomInBigRoad && this.isExpandBeadRoad) {
-            //get big road layout
-            const bigRoadLayout = this.nodeZoomInBigRoad.getComponent(GridLayout);
-            bigRoadLayout.settings.column = 7;
-            //get big road scoreboard
-            const bigRoadScoreboard = this.nodeZoomInBigRoad.getComponent(Scoreboard);
-            bigRoadScoreboard.render(bigRoadScoreboard.cached);
-        } else {
-            const bigRoadLayout = this.nodeZoomInBigRoad.getComponent(GridLayout);
-            bigRoadLayout.settings.column = 21;
-            //get big road scoreboard
-            const bigRoadScoreboard = this.nodeZoomInBigRoad.getComponent(Scoreboard);
-            bigRoadScoreboard.render(bigRoadScoreboard.cached);
-        }
+        this.renderScoreBoard();
 
         this.nodeContainer.getComponent(Layout).updateLayout();
 
+        const bigRoadZoomIn = this.nodeWrapperVertical.getChildByName("zoomInBigRoad");
         const bigRoadLayout = this.nodeBigRoad.getComponent(GridLayout);
         const bigRoadZoomInLayout = bigRoadZoomIn.getComponent(GridLayout);
         bigRoadLayout.scrollToEnd();
         bigRoadZoomInLayout.scrollToEnd();
-
-        // Switch between derived road modes when expanding/collapsing
-        if (currentZoomMode === this.zoomModes.zoomInDerivedRoad && this.isExpandBeadRoad) {
-            this.zoom(undefined, this.zoomModes.collapsedDerivedRoad);
-        } else if (currentZoomMode === this.zoomModes.collapsedDerivedRoad && !this.isExpandBeadRoad) {
-            this.zoom(undefined, this.zoomModes.zoomInDerivedRoad);
-        } else {
-            // Maintain current zoom mode for other cases
-            this.zoom(undefined, currentZoomMode);
-        }
     }
 
+    private updateBeadRoadUI() {
+        const expandedBeadRoadLayout = this.expandedBeadRoad.getComponent(GridLayoutBuilder);
+        const beadRoadConfigItem = this.isExpandBeadRoad ? beadRoadConfig.expand : beadRoadConfig.normal;
+        expandedBeadRoadLayout.settings.column = beadRoadConfigItem.col;
+        expandedBeadRoadLayout.applySettings();
+
+        const expandedBeadRoadScoreboard = this.expandedBeadRoad.getComponent(Scoreboard);
+        expandedBeadRoadScoreboard.render(expandedBeadRoadScoreboard.cached);
+    }
+
+    private resetUI() {
+        this.nodeBigEyeBoy.active = !this.isExpandBigRoad;
+        this.nodeSmallRoad.active = !this.isExpandBigRoad;
+        this.nodeCockroachPig.active = !this.isExpandBigRoad;
+        this.nodeMiddleLine.active = true;
+        this.nodeBigRoad.active = true;
+    }
     zoom(event: any, mode: string) {
         switch (mode) {
-            case this.zoomModes.normal:
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.normal).active = true;
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInBigRoad).active = false;
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInDerivedRoad).active = false;
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.collapsedDerivedRoad).active = false;
+            case this.zoomModes.bigRoad:
+                this.isExpandBigRoad = !this.isExpandBigRoad;
                 break;
 
-            case this.zoomModes.zoomInBigRoad:
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.normal).active = false;
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInBigRoad).active = true;
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInDerivedRoad).active = false;
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.collapsedDerivedRoad).active = false;
-                break;
-
-            case this.zoomModes.zoomInDerivedRoad:
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.normal).active = false;
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInBigRoad).active = false;
-
-                if (this.isExpandBeadRoad) {
-                    this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInDerivedRoad).active = false;
-                    this.nodeWrapperVertical.getChildByName(this.zoomModes.collapsedDerivedRoad).active = true;
-                } else {
-                    this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInDerivedRoad).active = true;
-                    this.nodeWrapperVertical.getChildByName(this.zoomModes.collapsedDerivedRoad).active = false;
-                }
-                break;
-
-            case this.zoomModes.collapsedDerivedRoad:
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.normal).active = false;
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInBigRoad).active = false;
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.zoomInDerivedRoad).active = false;
-                this.nodeWrapperVertical.getChildByName(this.zoomModes.collapsedDerivedRoad).active = true;
+            case this.zoomModes.derivedRoad:
+                this.isExpandDerivedRoad = !this.isExpandDerivedRoad;
                 break;
         }
+
+        this.renderScoreBoard();
     }
+
+    private updateScoreboardByConfig(config: any, node: Node) {
+        if (!config || !node) {
+            console.log("invalid config or node for updateScoreboardByConfig");
+            return;
+        }
+        const layoutBuilder = node.getComponent(GridLayoutBuilder);
+        layoutBuilder.settings.column = config.col;
+        layoutBuilder.settings.itemSize = config.size;
+        layoutBuilder.grid.itemSettings.size = config.size;
+
+        config.x !== undefined && config.y !== undefined && node.setPosition(config.x, config.y);
+        const grid = layoutBuilder.grid.scrollView.node.getChildByName("grid");
+        grid.getComponent(Sprite).spriteFrame = this.mainAtlas.getSpriteFrame(config.grid.name);
+        grid.getComponent(UITransform).width = config.grid.width;
+        grid.getComponent(UITransform).height = config.grid.height;
+
+        layoutBuilder.applySettings();
+        node.getComponentsInChildren(Widget).forEach((widget) => {
+            widget.updateAlignment();
+        });
+    }
+
+    private renderScoreBoard() {
+        this.resetUI();
+
+        if (!this.isExpandBigRoad && !this.isExpandDerivedRoad && !this.isExpandBeadRoad) {
+            this.updateScoreboardByConfig(bigRoadConfig.normal, this.nodeBigRoad);
+
+            const bigRoadScoreboard = this.nodeBigRoad.getComponent(Scoreboard);
+            bigRoadScoreboard.renderWithSize(false);
+
+            this.updateScoreboardByConfig(bigEyeBoyConfig.normal, this.nodeBigEyeBoy);
+            this.updateScoreboardByConfig(smallRoadConfig.normal, this.nodeSmallRoad);
+            this.updateScoreboardByConfig(cockroachPigConfig.normal, this.nodeCockroachPig);
+
+            this.baccaratDerivedRoad.renderWithSize(false);
+
+            this.nodeMiddleLine.setPosition(0, midLineConfig.normal.y);
+            this.nodeMiddleLine.getComponent(UITransform).width = midLineConfig.normal.width;
+            this.nodeSmallRoadLine.getComponent(UITransform).height = lineHeightConfig.normal.height;
+
+            this.nodeBigEyeBoyLine.active = true;
+            this.nodeSmallRoad.active = true;
+        } else if (!this.isExpandBigRoad && !this.isExpandDerivedRoad && this.isExpandBeadRoad) {
+
+            this.updateScoreboardByConfig(bigRoadConfig.normalWithBeadRoadExpand, this.nodeBigRoad);
+
+            const bigRoadScoreboard = this.nodeBigRoad.getComponent(Scoreboard);
+            bigRoadScoreboard.renderWithSize(false);
+
+            this.updateScoreboardByConfig(cockroachPigConfig.expandSmall, this.nodeCockroachPig);
+
+            this.baccaratDerivedRoad.renderWithSize(true);
+            
+            this.nodeMiddleLine.setPosition(0, midLineConfig.normal.y);
+            this.nodeMiddleLine.getComponent(UITransform).width = midLineConfig.expand.width;
+            this.nodeSmallRoadLine.getComponent(UITransform).height = lineHeightConfig.normal.height;
+
+            this.nodeBigEyeBoyLine.active = false;
+            this.nodeBigEyeBoy.active = false;
+            this.nodeSmallRoad.active = false;
+        } else if (!this.isExpandBigRoad && this.isExpandDerivedRoad && !this.isExpandBeadRoad) {
+            this.updateScoreboardByConfig(bigEyeBoyConfig.expand, this.nodeBigEyeBoy);
+            this.updateScoreboardByConfig(smallRoadConfig.expand, this.nodeSmallRoad);
+            this.updateScoreboardByConfig(cockroachPigConfig.expand, this.nodeCockroachPig);
+
+            this.baccaratDerivedRoad.renderWithSize(true);
+
+            this.nodeBigRoad.active = false;
+            this.nodeMiddleLine.setPosition(0, midLineConfig.expand.y);
+            this.nodeMiddleLine.getComponent(UITransform).width = midLineConfig.normal.width;
+            this.nodeSmallRoadLine.getComponent(UITransform).height = lineHeightConfig.expand.height;
+            this.nodeSmallRoad.active = true;
+            this.nodeBigEyeBoyLine.active = false;
+        } else if (!this.isExpandBigRoad && this.isExpandDerivedRoad && this.isExpandBeadRoad) {
+            this.updateScoreboardByConfig(bigEyeBoyConfig.expandSmall, this.nodeBigEyeBoy);
+            this.nodeSmallRoad.active = false;
+            this.updateScoreboardByConfig(cockroachPigConfig.normalWithBeadRoadExpand, this.nodeCockroachPig);
+
+            this.baccaratDerivedRoad.renderWithSize(true);
+
+            this.nodeBigRoad.active = false;
+
+            this.nodeMiddleLine.setPosition(0, midLineConfig.expand.y);
+            this.nodeMiddleLine.getComponent(UITransform).width = midLineConfig.expand.width;
+            this.nodeSmallRoadLine.getComponent(UITransform).height = lineHeightConfig.expand.height;
+            this.nodeSmallRoad.active = false;
+            this.nodeBigEyeBoyLine.active = false;
+        } else if (this.isExpandBigRoad && !this.isExpandDerivedRoad && !this.isExpandBeadRoad) {
+            this.updateScoreboardByConfig(bigRoadConfig.expand, this.nodeBigRoad);
+
+            const bigRoadScoreboard = this.nodeBigRoad.getComponent(Scoreboard);
+            bigRoadScoreboard.renderWithSize(true);
+
+            this.nodeMiddleLine.active = false;
+            this.nodeBigEyeBoy.active = false;
+            this.nodeSmallRoad.active = false;
+            this.nodeBigEyeBoyLine.active = false;
+
+            this.baccaratDerivedRoad.renderWithSize(true);
+        } else if (this.isExpandBigRoad && !this.isExpandDerivedRoad && this.isExpandBeadRoad) {
+            this.updateScoreboardByConfig(bigRoadConfig.expandSmall, this.nodeBigRoad);
+
+            const bigRoadScoreboard = this.nodeBigRoad.getComponent(Scoreboard);
+            bigRoadScoreboard.renderWithSize(true);
+
+            this.nodeMiddleLine.active = false;
+            this.nodeBigEyeBoy.active = false;
+            this.nodeSmallRoad.active = false;
+            this.nodeBigEyeBoyLine.active = false;
+
+            this.baccaratDerivedRoad.renderWithSize(true);
+        } 
+
+        this.updateBeadRoadUI();
+    }
+
+    updateBigRoadUIWhenZoomInDerivedRoad() {}
 
     setWidthForNodes(nodes: Node[], width: number) {
         nodes.forEach((node) => {
