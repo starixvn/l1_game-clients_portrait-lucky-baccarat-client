@@ -18,6 +18,9 @@ export class BaccaratScoreBoard extends Component {
     @property(Node)
     nodeBigRoad: Node = null;
 
+    @property(Node)
+    nodeZoomInBigRoad: Node = null;
+
     @property(SpriteAtlas)
     mainAtlas: SpriteAtlas = null;
 
@@ -94,6 +97,37 @@ export class BaccaratScoreBoard extends Component {
             this.expandedBeadRoad.node.active = false;
             this.collapsedBeadRoad.node.active = true;
         }
+
+        if (currentZoomMode === this.zoomModes.normal && this.isExpandBeadRoad) {
+            //get big road layout
+            const bigRoadLayout = this.nodeBigRoad.getComponent(GridLayout);
+            bigRoadLayout.settings.column = 11;
+            //get big road scoreboard
+            const bigRoadScoreboard = this.nodeBigRoad.getComponent(Scoreboard);
+            bigRoadScoreboard.render(bigRoadScoreboard.cached);
+        } else {
+            const bigRoadLayout = this.nodeBigRoad.getComponent(GridLayout);
+            bigRoadLayout.settings.column = 32;
+            //get big road scoreboard
+            const bigRoadScoreboard = this.nodeBigRoad.getComponent(Scoreboard);
+            bigRoadScoreboard.render(bigRoadScoreboard.cached);
+        }
+
+        if (currentZoomMode === this.zoomModes.zoomInBigRoad && this.isExpandBeadRoad) {
+            //get big road layout
+            const bigRoadLayout = this.nodeZoomInBigRoad.getComponent(GridLayout);
+            bigRoadLayout.settings.column = 7;
+            //get big road scoreboard
+            const bigRoadScoreboard = this.nodeZoomInBigRoad.getComponent(Scoreboard);
+            bigRoadScoreboard.render(bigRoadScoreboard.cached);
+        } else {
+            const bigRoadLayout = this.nodeZoomInBigRoad.getComponent(GridLayout);
+            bigRoadLayout.settings.column = 21;
+            //get big road scoreboard
+            const bigRoadScoreboard = this.nodeZoomInBigRoad.getComponent(Scoreboard);
+            bigRoadScoreboard.render(bigRoadScoreboard.cached);
+        }
+
         this.nodeContainer.getComponent(Layout).updateLayout();
 
         const bigRoadLayout = this.nodeBigRoad.getComponent(GridLayout);
@@ -148,8 +182,6 @@ export class BaccaratScoreBoard extends Component {
                 this.nodeWrapperVertical.getChildByName(this.zoomModes.collapsedDerivedRoad).active = true;
                 break;
         }
-
-        
     }
 
     setWidthForNodes(nodes: Node[], width: number) {

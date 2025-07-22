@@ -5613,7 +5613,7 @@
         "__id__": 324
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 533
@@ -11606,6 +11606,8 @@
       "__id__": 0
     },
     "fileId": "8ejKhhq2hAhIhGcVZwmeYy",
+    "instance": null,
+    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -17135,7 +17137,7 @@
         "__id__": 811
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 933
@@ -18380,6 +18382,8 @@
       "__id__": 0
     },
     "fileId": "55tFdjCEtNE4lAHnKiByt9",
+    "instance": null,
+    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -18514,6 +18518,8 @@
       "__id__": 0
     },
     "fileId": "a3XrCFLzVFwoNKWrvGpwOf",
+    "instance": null,
+    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -19654,6 +19660,8 @@
       "__id__": 0
     },
     "fileId": "e1j8YgxnRHNogvN/lCVoGX",
+    "instance": null,
+    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -23672,6 +23680,9 @@
     },
     "nodeBigRoad": {
       "__id__": 249
+    },
+    "nodeZoomInBigRoad": {
+      "__id__": 744
     },
     "mainAtlas": {
       "__uuid__": "8dc478c1-8ea3-4618-80ee-95750b3fcbe5",
