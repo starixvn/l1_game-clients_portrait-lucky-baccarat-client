@@ -88,7 +88,7 @@ tg.on("initialLoad", async () => {
             });
         });
 
-        // createCommonNamespace ? writeFileCommonJson(languageId, languages) : writeFileSourceTs(languageId, languages);
+        createCommonNamespace ? writeFileCommonJson(languageId, languages) : writeFileSourceTs(languageId, languages);
     }
 
     if (!createCommonNamespace) {

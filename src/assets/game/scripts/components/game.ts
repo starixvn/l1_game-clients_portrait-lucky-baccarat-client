@@ -11,7 +11,8 @@ import { WinningResult } from "../../../../extensions/shared-components/assets/s
 import { FunctionUtils } from "../../../../extensions/shared-components/assets/shared/utils";
 import { siteConfigs } from "../../../scripts/site-configs";
 import { ConfigJson } from "../../config-json-interface";
-import { containerOptions, settings } from "../game-settings";
+import { containerOptions } from "../containerOptions";
+import { settings } from "../game-settings";
 import "./../../../resources/i18n";
 
 startGame(settings.name, containerOptions, siteConfigs, settings.namespaces);
@@ -52,7 +53,7 @@ export default class Game extends GameComponent {
     private cutCardIndexInGame = 0;
     private audioContainer: AudioContainer = null;
 
-    private soundWinChoice = ["player", "banker", "tie"];
+    private readonly soundWinChoice = ["player", "banker", "tie"];
     private isAnimatingResult = false;
 
     onLoad() {
