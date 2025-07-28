@@ -10,7 +10,7 @@ import {
     cockroachPigConfig,
     lineHeightConfig,
     midLineConfig,
-    smallRoadConfig
+    smallRoadConfig,
 } from "./baccarat-scoreboard-config";
 
 const { ccclass, property } = _decorator;
@@ -82,19 +82,30 @@ export class BaccaratScoreBoard extends Component {
             : this.WIDTH_COLLAPSE_BEADROAD;
         this.nodeWrapperVertical.getComponent(UITransform).width = this.isExpandBeadRoad ? this.UN_EXPAND_WIDTH : this.EXPAND_WIDTH;
 
-        this.sprChangeModeBeadRoad.spriteFrame = this.mainAtlas.getSpriteFrame(
-            this.isExpandBeadRoad ? "stats-icon-zoom-out" : "stats-icon-zoom"
-        );
-
         this.renderScoreBoard();
 
         this.nodeContainer.getComponent(Layout).updateLayout();
 
-        const bigRoadZoomIn = this.nodeWrapperVertical.getChildByName("zoomInBigRoad");
         const bigRoadLayout = this.nodeBigRoad.getComponent(GridLayout);
-        const bigRoadZoomInLayout = bigRoadZoomIn.getComponent(GridLayout);
         bigRoadLayout.scrollToEnd();
-        bigRoadZoomInLayout.scrollToEnd();
+    }
+
+    private updateZoomButtonUI() {
+        this.sprChangeModeBeadRoad.spriteFrame = this.mainAtlas.getSpriteFrame(
+            this.isExpandBeadRoad ? "stats-icon-zoom-out" : "stats-icon-zoom"
+        );
+
+        const btnZoomBigRoad = this.nodeBigRoad.getChildByName("btnZoom");
+        btnZoomBigRoad.getComponent(Sprite).spriteFrame = this.mainAtlas.getSpriteFrame(
+            this.isExpandBigRoad ? "stats-icon-zoom-out" : "stats-icon-zoom"
+        );
+
+        [this.nodeBigEyeBoy, this.nodeSmallRoad, this.nodeCockroachPig].forEach((node) => {
+            const btnZoom = node.getChildByName("btnZoom");
+            btnZoom.getComponent(Sprite).spriteFrame = this.mainAtlas.getSpriteFrame(
+                this.isExpandDerivedRoad ? "stats-icon-zoom-out" : "stats-icon-zoom"
+            );
+        });
     }
 
     private updateBeadRoadUI() {
@@ -172,7 +183,6 @@ export class BaccaratScoreBoard extends Component {
             this.nodeBigEyeBoyLine.active = true;
             this.nodeSmallRoad.active = true;
         } else if (!this.isExpandBigRoad && !this.isExpandDerivedRoad && this.isExpandBeadRoad) {
-
             this.updateScoreboardByConfig(bigRoadConfig.normalWithBeadRoadExpand, this.nodeBigRoad);
 
             const bigRoadScoreboard = this.nodeBigRoad.getComponent(Scoreboard);
@@ -181,7 +191,7 @@ export class BaccaratScoreBoard extends Component {
             this.updateScoreboardByConfig(cockroachPigConfig.expandSmall, this.nodeCockroachPig);
 
             this.baccaratDerivedRoad.renderWithSize(true);
-            
+
             this.nodeMiddleLine.setPosition(0, midLineConfig.normal.y);
             this.nodeMiddleLine.getComponent(UITransform).width = midLineConfig.expand.width;
             this.nodeSmallRoadLine.getComponent(UITransform).height = lineHeightConfig.normal.height;
@@ -240,9 +250,11 @@ export class BaccaratScoreBoard extends Component {
             this.nodeBigEyeBoyLine.active = false;
 
             this.baccaratDerivedRoad.renderWithSize(true);
-        } 
+        }
 
         this.updateBeadRoadUI();
+
+        this.updateZoomButtonUI();
     }
 
     updateBigRoadUIWhenZoomInDerivedRoad() {}

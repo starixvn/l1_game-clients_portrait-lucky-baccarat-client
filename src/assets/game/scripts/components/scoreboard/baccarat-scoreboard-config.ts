@@ -49,6 +49,11 @@ interface BeadRoadConfigType {
     expand: BeadRoadConfigItem;
 }
 
+const STATS_GRID_1 = "stats-grid-1";
+const STATS_GRID_2 = "stats-grid-2";
+const STATS_GRID_EYE_BOY_ZOOM = "stats-grid-eyeboyzoom";
+const STATS_GRID_BIG_ROAD = "stats-grid-bigroad";
+
 // Exported configurations
 export const midLineConfig: MidLineConfigType = {
     normal: {
@@ -77,7 +82,7 @@ export const bigRoadConfig: RoadConfigType = {
         grid: {
             width: 22,
             height: 132,
-            name: "stats-grid-1",
+            name: STATS_GRID_1,
         },
     },
     normalWithBeadRoadExpand: {
@@ -86,7 +91,7 @@ export const bigRoadConfig: RoadConfigType = {
         grid: {
             width: 22,
             height: 132,
-            name: "stats-grid-1",
+            name: STATS_GRID_1,
         },
     },
     expand: {
@@ -95,7 +100,7 @@ export const bigRoadConfig: RoadConfigType = {
         grid: {
             width: 33,
             height: 198,
-            name: "stats-grid-bigroad",
+            name: STATS_GRID_BIG_ROAD,
         },
     },
     expandSmall: {
@@ -104,7 +109,7 @@ export const bigRoadConfig: RoadConfigType = {
         grid: {
             width: 33,
             height: 198,
-            name: "stats-grid-bigroad",
+            name: STATS_GRID_BIG_ROAD,
         },
     },
 };
@@ -118,7 +123,7 @@ export const bigEyeBoyConfig: RoadConfigType = {
         grid: {
             width: 22,
             height: 66,
-            name: "stats-grid-2",
+            name: STATS_GRID_2,
         },
     },
     normalWithBeadRoadExpand: {
@@ -129,7 +134,7 @@ export const bigEyeBoyConfig: RoadConfigType = {
         grid: {
             width: 32,
             height: 96,
-            name: "stats-grid-eyeboyzoom",
+            name: STATS_GRID_EYE_BOY_ZOOM,
         },
     },
     expand: {
@@ -140,7 +145,7 @@ export const bigEyeBoyConfig: RoadConfigType = {
         grid: {
             width: 32,
             height: 96,
-            name: "stats-grid-eyeboyzoom",
+            name: STATS_GRID_EYE_BOY_ZOOM,
         },
     },
     expandSmall: {
@@ -151,7 +156,7 @@ export const bigEyeBoyConfig: RoadConfigType = {
         grid: {
             width: 32,
             height: 96,
-            name: "stats-grid-eyeboyzoom",
+            name: STATS_GRID_EYE_BOY_ZOOM,
         },
     },
 };
@@ -165,7 +170,7 @@ export const smallRoadConfig: RoadConfigType = {
         grid: {
             width: 22,
             height: 66,
-            name: "stats-grid-2",
+            name: STATS_GRID_2,
         },
     },
     normalWithBeadRoadExpand: {},
@@ -177,7 +182,7 @@ export const smallRoadConfig: RoadConfigType = {
         grid: {
             width: 32,
             height: 96,
-            name: "stats-grid-eyeboyzoom",
+            name: STATS_GRID_EYE_BOY_ZOOM,
         },
     },
     expandSmall: {},
@@ -192,7 +197,7 @@ export const cockroachPigConfig: RoadConfigType = {
         grid: {
             width: 22,
             height: 66,
-            name: "stats-grid-2",
+            name: STATS_GRID_2,
         },
     },
     normalWithBeadRoadExpand: {
@@ -203,7 +208,7 @@ export const cockroachPigConfig: RoadConfigType = {
         grid: {
             width: 32,
             height: 96,
-            name: "stats-grid-eyeboyzoom",
+            name: STATS_GRID_EYE_BOY_ZOOM,
         },
     },
     expand: {
@@ -214,7 +219,7 @@ export const cockroachPigConfig: RoadConfigType = {
         grid: {
             width: 32,
             height: 96,
-            name: "stats-grid-eyeboyzoom",
+            name: STATS_GRID_EYE_BOY_ZOOM,
         },
     },
     expandSmall: {
@@ -225,7 +230,7 @@ export const cockroachPigConfig: RoadConfigType = {
         grid: {
             width: 22,
             height: 66,
-            name: "stats-grid-2",
+            name: STATS_GRID_2,
         },
     },
 };
@@ -237,4 +242,4 @@ export const beadRoadConfig: BeadRoadConfigType = {
     expand: {
         col: 17,
     },
-}; 
+};
