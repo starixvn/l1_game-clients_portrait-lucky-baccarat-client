@@ -91,19 +91,22 @@ export class BaccaratScoreBoard extends Component {
     }
 
     private updateZoomButtonUI() {
+
+        const zoomOutIcon = "stats-icon-zoom-out";
+        const zoomInIcon = "stats-icon-zoom";
         this.sprChangeModeBeadRoad.spriteFrame = this.mainAtlas.getSpriteFrame(
-            this.isExpandBeadRoad ? "stats-icon-zoom-out" : "stats-icon-zoom"
+            this.isExpandBeadRoad ? zoomOutIcon : zoomInIcon
         );
 
         const btnZoomBigRoad = this.nodeBigRoad.getChildByName("btnZoom");
         btnZoomBigRoad.getComponent(Sprite).spriteFrame = this.mainAtlas.getSpriteFrame(
-            this.isExpandBigRoad ? "stats-icon-zoom-out" : "stats-icon-zoom"
+            this.isExpandBigRoad ? zoomOutIcon : zoomInIcon
         );
 
         [this.nodeBigEyeBoy, this.nodeSmallRoad, this.nodeCockroachPig].forEach((node) => {
             const btnZoom = node.getChildByName("btnZoom");
             btnZoom.getComponent(Sprite).spriteFrame = this.mainAtlas.getSpriteFrame(
-                this.isExpandDerivedRoad ? "stats-icon-zoom-out" : "stats-icon-zoom"
+                this.isExpandDerivedRoad ? zoomOutIcon : zoomInIcon
             );
         });
     }
@@ -168,13 +171,13 @@ export class BaccaratScoreBoard extends Component {
             this.updateScoreboardByConfig(bigRoadConfig.normal, this.nodeBigRoad);
 
             const bigRoadScoreboard = this.nodeBigRoad.getComponent(Scoreboard);
-            bigRoadScoreboard.renderWithSize(false);
+            bigRoadScoreboard.renderAgainWithDefaultSize(true);
 
             this.updateScoreboardByConfig(bigEyeBoyConfig.normal, this.nodeBigEyeBoy);
             this.updateScoreboardByConfig(smallRoadConfig.normal, this.nodeSmallRoad);
             this.updateScoreboardByConfig(cockroachPigConfig.normal, this.nodeCockroachPig);
 
-            this.baccaratDerivedRoad.renderWithSize(false);
+            this.baccaratDerivedRoad.renderAgainWithDefaultSize(true);
 
             this.nodeMiddleLine.setPosition(0, midLineConfig.normal.y);
             this.nodeMiddleLine.getComponent(UITransform).width = midLineConfig.normal.width;
@@ -186,11 +189,11 @@ export class BaccaratScoreBoard extends Component {
             this.updateScoreboardByConfig(bigRoadConfig.normalWithBeadRoadExpand, this.nodeBigRoad);
 
             const bigRoadScoreboard = this.nodeBigRoad.getComponent(Scoreboard);
-            bigRoadScoreboard.renderWithSize(false);
+            bigRoadScoreboard.renderAgainWithDefaultSize(true);
 
             this.updateScoreboardByConfig(cockroachPigConfig.expandSmall, this.nodeCockroachPig);
 
-            this.baccaratDerivedRoad.renderWithSize(true);
+            this.baccaratDerivedRoad.renderAgainWithDefaultSize(true);
 
             this.nodeMiddleLine.setPosition(0, midLineConfig.normal.y);
             this.nodeMiddleLine.getComponent(UITransform).width = midLineConfig.expand.width;
@@ -204,7 +207,7 @@ export class BaccaratScoreBoard extends Component {
             this.updateScoreboardByConfig(smallRoadConfig.expand, this.nodeSmallRoad);
             this.updateScoreboardByConfig(cockroachPigConfig.expand, this.nodeCockroachPig);
 
-            this.baccaratDerivedRoad.renderWithSize(true);
+            this.baccaratDerivedRoad.renderAgainWithDefaultSize(false);
 
             this.nodeBigRoad.active = false;
             this.nodeMiddleLine.setPosition(0, midLineConfig.expand.y);
@@ -217,7 +220,7 @@ export class BaccaratScoreBoard extends Component {
             this.nodeSmallRoad.active = false;
             this.updateScoreboardByConfig(cockroachPigConfig.normalWithBeadRoadExpand, this.nodeCockroachPig);
 
-            this.baccaratDerivedRoad.renderWithSize(true);
+            this.baccaratDerivedRoad.renderAgainWithDefaultSize(false);
 
             this.nodeBigRoad.active = false;
 
@@ -230,34 +233,29 @@ export class BaccaratScoreBoard extends Component {
             this.updateScoreboardByConfig(bigRoadConfig.expand, this.nodeBigRoad);
 
             const bigRoadScoreboard = this.nodeBigRoad.getComponent(Scoreboard);
-            bigRoadScoreboard.renderWithSize(true);
+            bigRoadScoreboard.renderAgainWithDefaultSize(false);
 
             this.nodeMiddleLine.active = false;
             this.nodeBigEyeBoy.active = false;
             this.nodeSmallRoad.active = false;
             this.nodeBigEyeBoyLine.active = false;
 
-            this.baccaratDerivedRoad.renderWithSize(true);
         } else if (this.isExpandBigRoad && !this.isExpandDerivedRoad && this.isExpandBeadRoad) {
             this.updateScoreboardByConfig(bigRoadConfig.expandSmall, this.nodeBigRoad);
 
             const bigRoadScoreboard = this.nodeBigRoad.getComponent(Scoreboard);
-            bigRoadScoreboard.renderWithSize(true);
+            bigRoadScoreboard.renderAgainWithDefaultSize(false);
 
             this.nodeMiddleLine.active = false;
             this.nodeBigEyeBoy.active = false;
             this.nodeSmallRoad.active = false;
             this.nodeBigEyeBoyLine.active = false;
-
-            this.baccaratDerivedRoad.renderWithSize(true);
         }
 
         this.updateBeadRoadUI();
 
         this.updateZoomButtonUI();
     }
-
-    updateBigRoadUIWhenZoomInDerivedRoad() {}
 
     setWidthForNodes(nodes: Node[], width: number) {
         nodes.forEach((node) => {
