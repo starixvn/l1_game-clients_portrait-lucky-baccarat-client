@@ -1,4 +1,4 @@
-import { _decorator, Component, Layout, Node, Sprite, SpriteAtlas, UITransform, Widget } from "cc";
+import { _decorator, Component, Layout, Node, Sprite, SpriteAtlas, UITransform } from "cc";
 import { Scoreboard } from "db://shared-components/game/scoreboards/scripts/components/scoreboard";
 import { ScoreboardDerived } from "db://shared-components/game/scoreboards/scripts/components/scoreboard-derived";
 import { GridLayout } from "db://shared-components/shared/common-components/grid-layout/scripts/components/grid-layout";
@@ -159,9 +159,6 @@ export class BaccaratScoreBoard extends Component {
         grid.getComponent(UITransform).height = config.grid.height;
 
         layoutBuilder.applySettings();
-        node.getComponentsInChildren(Widget).forEach((widget) => {
-            widget.updateAlignment();
-        });
     }
 
     private renderScoreBoard() {
