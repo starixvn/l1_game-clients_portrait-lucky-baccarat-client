@@ -100,10 +100,11 @@ export class BaccaratScoreBoard extends Component {
     }
 
     private updateZoomButtonUI() {
-        [this.nodeBigRoad, this.nodeBigEyeBoy, this.nodeSmallRoad, this.nodeCockroachPig].forEach((node) => {
-            this.updateZoomButton(node, this.isExpandBigRoad);
+        [this.nodeBigEyeBoy, this.nodeSmallRoad, this.nodeCockroachPig].forEach((node) => {
+            this.updateZoomButton(node, this.isExpandDerivedRoad);
         });
         this.updateZoomButton(this.nodeBigRoad, this.isExpandBigRoad);
+        this.updateZoomButton(this.expandedBeadRoad.node, this.isExpandBeadRoad);
     }
 
     private updateZoomButton(node: Node, isExpanded: boolean) {
