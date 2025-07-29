@@ -6933,7 +6933,7 @@
     "algorithm": {
       "__id__": 309
     },
-    "needCache": true,
+    "enableCache": true,
     "_id": ""
   },
   {
@@ -6954,9 +6954,6 @@
     },
     "grid": {
       "__id__": 300
-    },
-    "background": {
-      "__id__": 250
     },
     "settings": {
       "__id__": 303
@@ -8590,9 +8587,6 @@
     "grid": {
       "__id__": 384
     },
-    "background": {
-      "__id__": 326
-    },
     "settings": {
       "__id__": 387
     },
@@ -9993,9 +9987,6 @@
     "grid": {
       "__id__": 450
     },
-    "background": {
-      "__id__": 392
-    },
     "settings": {
       "__id__": 453
     },
@@ -11218,9 +11209,6 @@
     "grid": {
       "__id__": 508
     },
-    "background": {
-      "__id__": 458
-    },
     "settings": {
       "__id__": 511
     },
@@ -11359,7 +11347,7 @@
     "algorithm": {
       "__id__": 522
     },
-    "needCache": true,
+    "enableCache": true,
     "grids": [
       {
         "__id__": 384
@@ -13286,9 +13274,6 @@
     "grid": {
       "__id__": 611
     },
-    "background": {
-      "__id__": 549
-    },
     "settings": {
       "__id__": 614
     },
@@ -13388,7 +13373,7 @@
     "algorithm": {
       "__id__": 622
     },
-    "needCache": true,
+    "enableCache": true,
     "_id": ""
   },
   {
