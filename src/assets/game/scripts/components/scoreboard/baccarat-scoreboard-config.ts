@@ -12,12 +12,6 @@ interface ScoreboardConfigItem {
     size: number;
     grid: GridConfig;
 }
-
-interface PositionConfig {
-    y: number;
-    width: number;
-}
-
 interface SizeConfig {
     height: number;
 }
@@ -28,8 +22,8 @@ interface BeadRoadConfigItem {
 
 // Configuration interfaces
 interface MidLineConfigType {
-    normal: PositionConfig;
-    expand: PositionConfig;
+    normalY: number;
+    expandY: number;
 }
 
 interface LineHeightConfigType {
@@ -56,14 +50,8 @@ const STATS_GRID_BIG_ROAD = "stats-grid-bigroad";
 
 // Exported configurations
 export const midLineConfig: MidLineConfigType = {
-    normal: {
-        y: -130,
-        width: 704,
-    },
-    expand: {
-        y: -98,
-        width: 240,
-    },
+    normalY: -130,
+    expandY: -98,
 };
 
 export const lineHeightConfig: LineHeightConfigType = {
