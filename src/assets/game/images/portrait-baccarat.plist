@@ -94,6 +94,21 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
+            <key>br_blue_circle_filled_ja.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{32,32}</string>
+                <key>spriteSourceSize</key>
+                <string>{32,32}</string>
+                <key>textureRect</key>
+                <string>{{139,205},{32,32}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
             <key>br_blue_circle_filled_th.png</key>
             <dict>
                 <key>aliases</key>
@@ -184,6 +199,21 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
+            <key>br_green_circle_filled_ja.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{31,31}</string>
+                <key>spriteSourceSize</key>
+                <string>{31,31}</string>
+                <key>textureRect</key>
+                <string>{{478,239},{31,31}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
             <key>br_green_circle_filled_th.png</key>
             <dict>
                 <key>aliases</key>
@@ -260,6 +290,21 @@
                 <false/>
             </dict>
             <key>br_red_circle_filled_id.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{32,32}</string>
+                <key>spriteSourceSize</key>
+                <string>{32,32}</string>
+                <key>textureRect</key>
+                <string>{{203,211},{32,32}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>br_red_circle_filled_ja.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -574,6 +619,21 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
+            <key>led-stats-banker_ja.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{28,28}</string>
+                <key>spriteSourceSize</key>
+                <string>{28,28}</string>
+                <key>textureRect</key>
+                <string>{{175,85},{28,28}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
             <key>led-stats-banker_th.png</key>
             <dict>
                 <key>aliases</key>
@@ -650,6 +710,21 @@
                 <false/>
             </dict>
             <key>led-stats-player_id.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{28,28}</string>
+                <key>spriteSourceSize</key>
+                <string>{28,28}</string>
+                <key>textureRect</key>
+                <string>{{174,175},{28,28}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>led-stats-player_ja.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -751,6 +826,21 @@
                 <string>{28,28}</string>
                 <key>textureRect</key>
                 <string>{{68,298},{28,28}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>led-stats-tie_ja.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{28,28}</string>
+                <key>spriteSourceSize</key>
+                <string>{28,28}</string>
+                <key>textureRect</key>
+                <string>{{68,268},{28,28}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -1158,7 +1248,7 @@
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:96f6582897087fee1139ee6c37b159e9:07319546902a72af8d4463f2511910fa:3bc4ae5e4f890ccaa4726ad1e43d8b91$</string>
+            <string>$TexturePacker:SmartUpdate:040ebfb6945b3ce40574ef24f2026908:85d772a38fd5432777f61fa20cbdc550:3bc4ae5e4f890ccaa4726ad1e43d8b91$</string>
             <key>textureFileName</key>
             <string>portrait-baccarat.webp</string>
         </dict>
