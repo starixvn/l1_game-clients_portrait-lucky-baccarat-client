@@ -3,17 +3,17 @@ export const languages = {
     "Common": {
         "all": "Todos",
         "back": "Volver",
-        "bet_amount_of_any_choice_incorrect": "Importe de apuesta no válido",
-        "bet_choice": "Elección de Apuesta",
-        "betChoice2": "Monto de Apuesta",
+        "bet_amount_of_any_choice_incorrect": "Monto de apuesta no válido",
+        "bet_choice": "Selección de Apuesta",
+        "betChoice2": "Selección de Apuesta",
         "bet_choice_away": "Visitante",
         "bet_choice_draw": "Empate",
         "bet_choice_even": "Par",
-        "bet_choice_home": "Inicio",
+        "bet_choice_home": "Local",
         "bet_choice_odd": "Impar",
-        "bet_choice_over": "Más de",
-        "betChoice_shorten": "Opción de Apuesta",
-        "bet_choice_under": "Menos de",
+        "bet_choice_over": "Over",
+        "betChoice_shorten": "Selección\nde Apuesta",
+        "bet_choice_under": "Under",
         "bet_detail": "Detalles de la Apuesta",
         "bet_history": "Historial de Apuestas",
         "bet_limit": "Límite de Apuesta",
@@ -27,7 +27,7 @@ export const languages = {
         "cant_split_child_hand": "La opción 'Dividir' no está disponible para esta mano.",
         "cant_split_hand": "La opción \"Dividir\" no está disponible para esta mano.",
         "cards_not_equal": "Las cartas no tienen el mismo valor.",
-        "character_name": "Alias",
+        "character_name": "Apodo",
         "copy_failed_md5": "Función de copiado temporalmente no disponible.",
         "copy_successfully_md5": "Copiado con éxito.",
         "create_nick_name": "Crea tu Apodo",
@@ -36,7 +36,7 @@ export const languages = {
         "even_win": "Ganancias a la Par",
         "from": "desde",
         "game_category_new_releases": "Novedades",
-        "game_category_ph_1": "Todos los Juegos",
+        "game_category_ph_1": "Todos",
         "game_category_ph_2": "Pinoy Especial",
         "game_category_ph_3": "Tragaperras",
         "game_category_ph_4": "Juegos de Cartas",
@@ -47,10 +47,10 @@ export const languages = {
         "hand_already_splitted": "Esta mano ya se dividió.",
         "hand_is_stand": "Mano Final",
         "hand_not_active": "Mano Inactiva",
-        "hot": "Popular",
+        "hot": "Caliente",
         "invalid_bet": "Apuesta inválida",
         "invalid_deal_hands": "La cantidad de manos no es válida",
-        "invalid_free_spin": "Giro Gratis Inválido",
+        "invalid_free_spin": "Free Spin Inválido",
         "invalid_hand_id": "ID de mano inválido",
         "invalid_position": "Posición no válida",
         "invalid_stake_level": "Nivel de apuesta inválido",
@@ -172,9 +172,11 @@ export const languages = {
         "pf_fairness": "Equidad",
         "pf_header_client_seed": "Semilla del Cliente",
         "pf_header_combined_sha512_hash": "Hash SHA512 combinado",
-        "pf_ header_merge_client_seed": "Fusionar Semilla del Cliente",
+        "pf_ header_merge_client_seed": "Combinar la  \nsemilla del cliente",
+        "pf_ header_merge_client_seed_single": "Combinar la semilla del cliente",
         "pf_header_server_seed": "Semilla del Servidor",
-        "pf_header_server_seed_sha256": "Semilla del Servidor SHA256",
+        "pf_header_server_seed_sha256": "SHA256 de la  \nsemilla del servidor",
+        "pf_header_server_seed_sha256_single": "SHA256 de la semilla del servidor",
         "pf_new_client_seed_para_1": "Tu semilla:",
         "pf_player_1": "Jugador 1",
         "pf_player_2": "Jugador 2",
@@ -230,11 +232,11 @@ export const languages = {
         "all_tables": "Todas las mesas",
         "average": "Promedio",
         "banker_win": "Gana la Banca",
-        "button_home": "Inicio",
+        "button_home": "Local",
         "button_music": "Música",
         "button_reconnect": "Reconectar",
         "button_settings": "Configuración",
-        "button_sfx": "EFECTO DE SONIDO",
+        "button_sfx": "SFX",
         "calculate_final_cut-card_index": "Calcular índice final de carta de corte",
         "cut-card_index_note": "El índice de la Carta de Corte es una combinación de la Semilla del Servidor y las Semillas del Cliente de todos los jugadores que han enviado sus apuestas.",
         "don't_show_again": "No volver a mostrar",
@@ -243,10 +245,10 @@ export const languages = {
         "fairness_settings_para_1": "Los jugadores pueden introducir su valor de Semilla de Cliente y verificar la justicia del juego desde el Historial de Apuestas al finalizar la baraja.",
         "final_cut-card_index": "Índice de cartas de corte final",
         "final_shoe_result": "Resultado Final del Zapato",
-        "game_icon_name": "Lucky Baccarat",
+        "game_icon_name": "Baccarat Suerte",
         "game_name": "BaccaratX",
         "general": "General",
-        "glossary_banker": "Banquero",
+        "glossary_banker": "Banca",
         "glossary_banker_pair": "Pareja B.",
         "glossary_player": "Jugador",
         "glossary_player_pair": "Pareja J.",
@@ -262,21 +264,21 @@ export const languages = {
         "no_good_road_header": "Encuentra Tu Buen Camino Aquí",
         "no_good_road_para1": "Te notificaremos inmediatamente cuando haya Buenas Rutas que coincidan con tu patrón favorito.",
         "no_good_road_para2": "Puedes seleccionar más patrones a tu gusto en el menú de Ajustes.",
-        "one_lounge_two_bedrooms_banker": "Una sala, dos dormitorios, Banca",
-        "one_lounge_two_bedrooms_player": "Jugador Salón Dos Dormitorios",
+        "one_lounge_two_bedrooms_banker": "Banca - 1 sala, 2 dormitorios ",
+        "one_lounge_two_bedrooms_player": "Jugador - 1 sala, 2 dormitorios ",
         "patted_eat_banker": "Comer Banquero",
         "patted_eat_player": "Jugador Afortunado",
         "ping_pong_banker": "Ping Pong Banker",
         "ping_pong_player": "Jugador de Ping Pong",
         "player_win": "Gana el Jugador",
         "scoreboard_banker_pair": "Pareja B.",
-        "scoreboard_player_pair": "Par J.",
+        "scoreboard_player_pair": "Pareja J.",
         "select_all": "Seleccionar todo",
         "settling_status": "Liquidando",
-        "shoe_result": "Resultado de la Zapato",
-        "shoe_result SHA256": "Resultado de la baraja SHA256",
+        "shoe_result": "Resultado Zapato ",
+        "shoe_result SHA256": "SHA256 Resultado Zapato",
         "short_banker": "B",
-        "short_player": "P",
+        "short_player": "J",
         "show_cut_card_index": "El índice de la carta de corte es %{cut_card_index}",
         "shuffling_cards": "Barajando",
         "stop_bet_status": "Detener apuesta",
@@ -291,7 +293,7 @@ export const languages = {
         "table": "Mesa",
         "tag_classic": "Clásico",
         "tag_lucky": "Suerte",
-        "tag_speed": "Velocidad",
+        "tag_speed": "Rápido",
         "tie_win": "EMPATE",
         "title_cut-card_index": "Índice de corte",
         "title_cut-card_index_settings": "Ajustes de Índice de Carta de Corte",
@@ -300,13 +302,13 @@ export const languages = {
         "waiting screen_para_2": "Haz clic en el botón de abajo si deseas contribuir a la generación del índice de cartas cortadas"
     },
     "Bac81": {
-        "game_name": "Lucky Baccarat"
+        "game_name": "Baccarat Suerte"
     },
     "Bac82": {
-        "game_name": "Lucky Baccarat 2"
+        "game_name": "Baccarat Suerte 2"
     },
     "Bac83": {
-        "game_name": "Lucky Baccarat 3"
+        "game_name": "Baccarat Suerte 3"
     },
     "Bac84": {
         "game_name": "Baccarat 2"
@@ -321,10 +323,10 @@ export const languages = {
         "game_name": "Baccarat 5"
     },
     "Bac88": {
-        "game_name": "Lucky Baccarat 4"
+        "game_name": "Baccarat Suerte 4"
     },
     "Bac89": {
-        "game_name": "Lucky Baccarat 5"
+        "game_name": "Baccarat Suerte 5"
     },
     "Bac90": {
         "game_name": "Baccarat 6"
@@ -342,7 +344,7 @@ export const languages = {
         "game_name": "Baccarat Rápido"
     },
     "Bac100": {
-        "game_name": "Baccarat Veloz 2"
+        "game_name": "Baccarat Rápido 2"
     },
     "Bac101": {
         "game_name": "Baccarat Rápido 3"
