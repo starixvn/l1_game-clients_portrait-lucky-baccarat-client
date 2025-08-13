@@ -1,1 +1,5 @@
-{ "banner": "1", "icon": "16" }
+{
+    "banner": "1",
+    "icon": "16",
+    "localization": "2"
+}
