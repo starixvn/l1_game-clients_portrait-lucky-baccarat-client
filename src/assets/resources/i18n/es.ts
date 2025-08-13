@@ -258,7 +258,7 @@ export const languages = {
         "Header_fairness_settings": "Configuración de Justicia",
         "header_fairness_verification": "Verificación de Juego Limpio",
         "input_cut-card_button": "Índice de carta de corte de entrada",
-        "multiplierpayouts_fee": "Tarifa Adicional",
+        "multiplierpayouts_fee": "Tarifa Extra",
         "multiplierpayouts_lucky_card": "Cartas de la Suerte",
         "multiplierpayouts_multiplier": "Multiplicador",
         "no_good_road_header": "Encuentra Tu Buen Camino Aquí",
